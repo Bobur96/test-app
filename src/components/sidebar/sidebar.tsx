@@ -44,8 +44,8 @@ const Sidebar = (props: any) => {
             className="preference"
             onClick={(item) => {
               if(item.key==="/logout"){
-                sessionStorage.clear()
-                navigate('/')
+                sessionStorage.clear();
+                window.location.replace('/');
               }
               else navigate(item.key)
             }}

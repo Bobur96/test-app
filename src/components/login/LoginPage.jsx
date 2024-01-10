@@ -16,13 +16,13 @@ export default function LoginPage() {
 
   const onSubmit = async () => {
     if (!password.trim()) return;
-    await setLoading(true);
+    setLoading(true);
 
     setTimeout(() => {
-      console.log(password.toLowerCase());
       if (password.toLowerCase() === "oybek") {
         sessionStorage.setItem("token", password);
-        navigate("/");
+        window.onbeforeunload = {};
+        window.location.replace('/');
       } else {
         setPassword("");
         sessionStorage.clear();

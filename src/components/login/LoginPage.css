@@ -184,9 +184,9 @@
 }
 
 .llogin :where(.css-dev-only-do-not-override-190m0jy).ant-spin .ant-spin-dot-item {
-	background-color: #5e57e7;
+	background-color: #5e57e7 !important;
 }
 
 .cl {
-	color: #4C489D;
+	color: #4C489D !important;
 }

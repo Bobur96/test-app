@@ -23,11 +23,8 @@ const App: React.FC = () => {
   useEffect(() => {
     const pathName = location.pathname;
     setSelectedKeys(pathName);
-    if(sessionStorage.getItem("token")){
-      setToken(true)
-    }else{
-      setToken(false)
-    }
+    if(sessionStorage.getItem("token")) setToken(true)
+    else setToken(false)
   }, [location.pathname]);
 
   return token ? (
@@ -36,7 +33,6 @@ const App: React.FC = () => {
       <Layout>
         <Navbar collapsed={collapsed} setCollapsed={setCollapsed} />
         <Content style={{ margin: "24px 20px 16px 20px", height: "80vh", overflowY: "auto", background: '#f6f6f6'}}>
-          
           <Routes>
             <Route path="/" element={<Document />} />
             <Route path="/employees" element={<Employees />} />
@@ -44,7 +40,6 @@ const App: React.FC = () => {
             <Route path="/user-info" element={<UserInfo />} />
             <Route path="/user-kpi" element={<UserKpi />} />
           </Routes>
-
         </Content>
       </Layout>
     </Layout>
