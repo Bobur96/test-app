@@ -42,7 +42,13 @@ const Sidebar = (props: any) => {
           { !collapsed && <p>Performances</p> }
           <Menu
             className="preference"
-            onClick={(item) => navigate(item.key)}
+            onClick={(item) => {
+              if(item.key==="/logout"){
+                sessionStorage.clear()
+                navigate('/')
+              }
+              else navigate(item.key)
+            }}
             defaultOpenKeys={["/"]}
             mode="inline"
             inlineCollapsed={collapsed}
