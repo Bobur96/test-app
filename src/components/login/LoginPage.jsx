@@ -29,7 +29,7 @@ export default function LoginPage() {
         toast.error("Parol noto'g'ri! Iltimos qaytadan kiriting");
       }
       setLoading(false);
-    }, 3000);
+    }, 1200);
   };
 
   return (
