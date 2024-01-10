@@ -14,7 +14,7 @@ import Navbar from "./components/navbar/navbar";
 const { Content } = Layout;
 
 const App: React.FC = () => {
-  const [token, setToken] = useState(false);
+  const [token, setToken] = useState(sessionStorage.getItem('tokenn'));
   const [collapsed, setCollapsed] = useState(false);
   const { token: { colorBgContainer } } = theme.useToken();
   const [selectedKeys, setSelectedKeys] = useState("/");
@@ -23,8 +23,7 @@ const App: React.FC = () => {
   useEffect(() => {
     const pathName = location.pathname;
     setSelectedKeys(pathName);
-    if(sessionStorage.getItem("token")) setToken(true)
-    else setToken(false)
+    setToken(sessionStorage.getItem('tokenn'));
   }, [location.pathname]);
 
   return token ? (

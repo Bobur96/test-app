@@ -20,7 +20,7 @@ export default function LoginPage() {
 
     setTimeout(() => {
       if (password.toLowerCase() === "oybek") {
-        sessionStorage.setItem("token", password);
+        sessionStorage.setItem("tokenn", password);
         window.onbeforeunload = {};
         window.location.replace('/');
       } else {
